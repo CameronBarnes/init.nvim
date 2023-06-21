@@ -98,7 +98,14 @@ local plugins = {
             --"nvim-tree/nvim-web-devicons",
         },
         config = function()
-            require("nvim-tree").setup {}
+            require("nvim-tree").setup {
+				renderer = {indent_markers = {
+					enable = true
+				}},
+				disable_netrw = true,
+				hijack_netrw = true,
+				filters = { custom = { "^.git$" } }
+			}
         end,
     },
     {
