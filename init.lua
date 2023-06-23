@@ -12,6 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = require("tigertm.plugins")
-require("lazy").setup(plugins, opts)
+require("lazy").setup(plugins, _)
 
 require("tigertm")
