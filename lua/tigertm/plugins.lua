@@ -104,7 +104,7 @@ local plugins = {
 				}},
 				disable_netrw = true,
 				hijack_netrw = true,
-				filters = { custom = { "^.git$" } }
+				filters = { custom = { "^.git$", "Cargo.lock" } }
 			}
         end,
     },
