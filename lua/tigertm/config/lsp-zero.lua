@@ -53,9 +53,15 @@ lsp.on_attach(function(_, bufnr)
 	lsp.default_keymaps({buffer = bufnr})
 
 	local wk = require("which-key")
+	local opts = {buffer = bufnr, remap = false}
 
 	wk.register({
-		K = {vim.lsp.buf.hover, "LSP Hover"},
+		K = {function ()
+			local winid = require('ufo').peekFoldedLinesUnderCursor()
+			if not winid then
+				vim.lsp.buf.hover()
+			end
+		end, "LSP Hover"},
 		["<C-h>"] = {vim.lsp.buf.signature_help, "LSP Signature Help"},
 		["<leader>"] = {
 			D = {vim.lsp.buf.definition, "LSP Definition"},
@@ -68,7 +74,7 @@ lsp.on_attach(function(_, bufnr)
 				R = {vim.lsp.buf.rename, "Rename"},
 			}
 		}
-	}, {buffer = bufnr, remap = false})
+	}, opts)
 
 	vim.keymap.set('n', '[d', function() vim.diagnostic.goto_next() end, opts)
 	vim.keymap.set('n', ']d', function() vim.diagnostic.goto_prev() end, opts)
