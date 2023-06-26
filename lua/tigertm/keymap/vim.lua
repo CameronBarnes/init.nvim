@@ -1,8 +1,4 @@
 local wk = require("which-key")
 
-wk.register({
-	["<leader>v"] = {
-		name = "+VIM",
-		e = {vim.cmd.Ex, "Browse Files"}
-	}
-})
+-- Previous had a keybinding here for the default nvim file browser,
+-- but we're not using that because we're using nvim-tree instead

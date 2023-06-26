@@ -37,7 +37,7 @@ require('gitsigns').setup{
 			d = {gs.diffthis, "Diff this"},
 			D = {function() gs.diffthis('~') end, "Diff ~"},
 		}
-	})
+	}, {buffer = bufnr})
 
     -- Actions
     map('v', '<leader>gs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
