@@ -35,16 +35,22 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
     return newVirtText
 end
 
+local fileType = {
+	git = "",
+}
+
 ufo.setup({
 	fold_virt_text_handler = handler,
     provider_selector = function(bufnr, filetype, buftype)
-        return {'treesitter', 'indent'}
+        return fileType[fileType] or {'treesitter', 'indent'}
     end
 })
 
 wk.register({
 	["z"] = {
 		R = {ufo.openAllFolds, "Open All Folds"},
+		r = {ufo.openFoldsExceptKinds, "Open All Folds Except Kinds"},
 		M = {ufo.closeAllFolds, "Close All Folds"},
+		m = {ufo.closeFoldsWith, "Close All Folds With 0"},
 	}
 })
