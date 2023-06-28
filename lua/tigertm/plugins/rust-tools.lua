@@ -26,8 +26,9 @@ local plugins = {
 			end
 
 			return {
-				server = utils.extend_tbl(utils.config("rust_analyzer"), { settings = { ["rust-analyzer"] = {fmtOnSave = {enable = true}, procMacro = {enable = true}, checkOnSave = { enable = true, command = "clippy", }, cargo = { allFeatures = true, },} }}),
-				dap = { adapter = adapter }
+				server = utils.extend_tbl(utils.config("rust_analyzer"), { standalone = true, settings = { ["rust-analyzer"] = {fmtOnSave = {enable = true}, procMacro = {enable = true}, checkOnSave = { enable = true, command = "clippy", }, cargo = { allFeatures = true, },} }}),
+				dap = { adapter = adapter },
+				hover_actions = { auto_focus = true },
 			}
 		end,
 		dependencies = {{"jay-babu/mason-nvim-dap.nvim"}},
