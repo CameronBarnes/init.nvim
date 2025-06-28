@@ -1,6 +1,7 @@
 local plugins = {
 	{ "ThePrimeagen/harpoon" },
 	{ "mbbill/undotree" },
+	{ "mrcjkb/rustaceanvim", version = '^6', lazy = false, },
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ 'echasnovski/mini.nvim', version = false },
 	{ "folke/neodev.nvim", opts = {} },

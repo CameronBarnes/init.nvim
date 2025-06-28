@@ -1,5 +1,5 @@
 local wk = require("which-key")
 
-wk.register({
-	["<leader>u"] = {vim.cmd.UndotreeToggle, "Toggle Undo Tree"}
+wk.add({
+	{ "<leader>u", vim.cmd.UndotreeToggle, desc = "Toggle Undo Tree" }
 })

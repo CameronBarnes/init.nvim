@@ -1,15 +1,11 @@
 local wk = require("which-key")
 
-wk.register({
-	["<leader>l"] = {
-		name = "+LeetBuddy",
-		L = {function ()
-			require("leetbuddy").setup({ language = "rs" }) -- initialize LeetBuddy and set the default problem language to Rust
-		end, "Load LeetBuddy"},
-		l = {function() vim.cmd("LBQuestions") end, "List Questions"},
-		q = {function() vim.cmd("LBQuestion") end, "View Question"},
-		R = {function() vim.cmd("LBReset") end, "Reset Code"},
-		t = {function() vim.cmd("LBTest") end, "Run Code"},
-		S = {function() vim.cmd("LBSubmit") end, "Submit Code"},
-	}
+wk.add({
+	{ "<leader>l",  group = "+LeetBuddy" },
+	{ "<leader>lL", function() require("leetbuddy").setup({ language = "rs" }) end, desc = "Load LeetBudy" },
+	{ "<leader>ll", function() vim.cmd("LBQuestions") end,                          desc = "List Questions" },
+	{ "<leader>lq", function() vim.cmd("LBQuestion") end,                           desc = "View Question" },
+	{ "<leader>lR", function() vim.cmd("LBReset") end,                              desc = "Reset Code" },
+	{ "<leader>lt", function() vim.cmd("LBTest") end,                               desc = "Test Code" },
+	{ "<leader>lS", function() vim.cmd("LBSubmit") end,                             desc = "Submit Code" },
 })

@@ -1,7 +1,11 @@
 local wk = require("which-key")
 
-wk.register({
-    ["<leader>S"] = {function ()
-        vim.cmd("AerialToggle!")
-    end, "AerialToggle"}
+wk.add({
+	{
+		"<leader>S",
+		function()
+			vim.cmd("AerialToggle!")
+		end,
+		desc = "AerialToggle"
+	}
 })

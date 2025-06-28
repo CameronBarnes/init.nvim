@@ -2,19 +2,17 @@ local wk = require("which-key")
 
 local t = require("telescope.builtin")
 
-wk.register({
-    ["<leader>f"] = {
-        name = "+Telescope / Find",
-        f = {t.find_files, "Find Files"},
-        g = {t.grep_string, "File Grep String"},
-        l = {t.live_grep, "File Live Grep"},
-        G = {t.git_files, "Git Files"},
-        b = {t.buffers, "Buffers"},
-        c = {t.commands, "Commands"},
-        h = {t.help_tags, "Help Tags"},
-        m = {t.man_pages, "Man Pages"},
-        q = {t.quickfix, "Quickfix"},
-        C = {t.current_buffer_fuzzy_find, "Current Buffer FzF"},
-        p = {t.builtin, "List all builtin pickers"}
-    }
+wk.add({
+	{ "<leader>f",  group = "+Telescope / Find" },
+	{ "<leader>ff", t.find_files,                desc = "Find Files" },
+	{ "<leader>fg", t.grep_string,               desc = "File Grep String" },
+	{ "<leader>fl", t.live_grep,                 desc = "File Live Grep" },
+	{ "<leader>fG", t.git_files,                 desc = "Git Files" },
+	{ "<leader>fb", t.buffers,                   desc = "Buffers" },
+	{ "<leader>fc", t.commands,                  desc = "Commands" },
+	{ "<leader>fh", t.help_tags,                 desc = "Help Tags" },
+	{ "<leader>fm", t.man_pages,                 desc = "Man Pages" },
+	{ "<leader>fq", t.quickfix,                  desc = "Quickfix" },
+	{ "<leader>fC", t.current_buffer_fuzzy_find, desc = "Current Buffer FzF" },
+	{ "<leader>fp", t.builtin,                   desc = "List all builtin pickers" }
 })

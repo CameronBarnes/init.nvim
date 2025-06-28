@@ -3,9 +3,7 @@ local wk = require("which-key")
 -- Previous had a keybinding here for the default nvim file browser,
 -- but we're not using that because we're using nvim-tree instead
 
-wk.register({
-	["<leader>V"] = {
-		name = "+Vim",
-		t = {vim.cmd(":set noet|retab!"), "Switch From Spaces to Tabs"}, -- For some reason this isnt working, I dont know why
-	}
+wk.add({
+	{ "<leader>V",  group = "+Vim" },
+	{ "<leader>Vt", function() vim.cmd(":set noet|retab!") end, desc = "Switch from Spaces to Tabs" },
 })
