@@ -1,4 +1,5 @@
 local plugins = {
+	{ "github/copilot.vim" },
 	{ "ThePrimeagen/harpoon" },
 	{ "mbbill/undotree" },
 	{ "mrcjkb/rustaceanvim", version = '^6', lazy = false, },
